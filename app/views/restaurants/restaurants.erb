@@ -1,7 +1,8 @@
-<h1>Welcome, <%= @user.username %></h1>
+<h1>Hey, <%= @user.username %>!</h1>
+<h3>Here's some restaurant suggestions, from all our users</h3><br>
 
 <% Restaurant.all.each do |restaurant| %>
-   <ol><b><%= restaurant.user.username %></b> : <%= restaurant.name %></ol><br>
+   <ol><%=restaurant.name %>, <%=restaurant.cuisine%> food - located in <%=restaurant.neighborhood%></ol><br>
 <% end %>
 
 <form action="/restaurants/new" method="post" >
