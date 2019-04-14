@@ -1,0 +1,14 @@
+<h1>Welcome, <%= @user.username %></h1>
+
+<% Restaurant.all.each do |restaurant| %>
+   <ol><b><%= restaurant.user.username %></b> : <%= restaurant.name %></ol><br>
+<% end %>
+
+<form action="/restaurants/new" method="post" >
+   <input type="submit" value="New Restaurant" id="submit">
+</form>
+
+<br>
+<form action="/logout" method="post">
+   <input type="submit" value="Log Out" id="logout">
+</form>
