@@ -17,7 +17,7 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  get '/tweets/new' do
+  get '/restaurants/new' do
     if logged_in?
       erb :'/restaurants/new'
     else
@@ -37,7 +37,7 @@ class RestaurantsController < ApplicationController
 
   get '/restuarants/:id' do
     if logged_in?
-      @restaurant = Restaurant.find(params[::id])
+      @restaurant = Restaurant.find(params[:id])
       erb :'/restaurants/show_restuarant'
     else
       redirect '/login'
@@ -63,19 +63,19 @@ class RestaurantsController < ApplicationController
       @restuarant.update(params[:restaurant])
       redirect "/restaurants/#{@restuarant.id}"
     else
-      redirect "/restuarants/#{params[:id]}/edit"
+      redirect "/restaurants/#{params[:id]}/edit"
     end
   end
 
-  delete '/restuarants/:id' do
+  delete '/restaurants/:id' do
     if logged_in?
-      @restuarant = Restaurant.find(params[:id])
-      if @restuarant.user.id == session[:user_id]
-        @restuarant.destroy
+      @restaurant = Restaurant.find(params[:id])
+      if @restaurant.user.id == session[:user_id]
+        @restaurant.destroy
       end
     else
       redirect '/login'
-    end 
+    end
   end
 
 end
