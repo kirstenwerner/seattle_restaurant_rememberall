@@ -1,0 +1,17 @@
+<h1><%=@restaurant.name%></h1>
+
+<p>Cuisine: <%= @restaurant.cuisine %></p>
+<p>Neighborhood: <%=@restaurant.neighborhood %></p>
+
+<br>
+
+<form action="/restaurants/<%=@restaurant.id%>/edit" method="post">
+   <input type="submit" value="Edit Restaurant" id="edit">
+</form>
+
+<br>
+
+<form action="/restaurants/<%=@restaurant.id%>" method="post">
+   <input type="hidden" id="hidden" value="delete" name="_method">
+   <input type="submit" value="Delete Restaurant" id="delete">
+</form>
