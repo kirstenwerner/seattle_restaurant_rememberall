@@ -1,0 +1,10 @@
+<h1>Edit Restaurant details:</h1>
+
+<form action="/restaurants/<%=@restaurant.id%>" method="post">
+   <input type="hidden" id="hidden" value="patch" name="_method">
+   <p>Name: <input type="text" id="name" value="<%=@restaurant.name%>" name="restaurant[name]"></p>
+   <p>Cuisine: <input type="text" id="cuisine" value="<%=@restaurant.cuisine%>" name="restaurant[cuisine]"></p>
+   <p>Neighborhood: <input type="text" id="neighborhood" value="<%=@restaurant.neighborhood%>" name="restaurant[neighborhood]"></p>
+   <br>
+   <input type="submit" id="submit">
+</form>
