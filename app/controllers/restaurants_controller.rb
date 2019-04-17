@@ -9,6 +9,11 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  get '/index' do
+    @users = User.all
+    erb :'/users/index'
+  end
+
   post '/restaurants/new' do
     if logged_in?
       redirect '/restaurants/new'
@@ -27,6 +32,7 @@ class RestaurantsController < ApplicationController
 
   post '/restaurants' do
     @user = User.find(session[:user_id])
+    binding.pry
     @cuisine = Cuisine.find_or_create_by(params[:cuisine])
     @neighborhood = Neighborhood.find_or_create_by(params[:neighborhood])
 
@@ -64,7 +70,7 @@ class RestaurantsController < ApplicationController
       redirect "/by_cuisine/#{@cuisine.name}"
     else
       redirec "/by_cuisine"
-    end 
+    end
   end
 
   get "/by_cuisine/:cuisine" do

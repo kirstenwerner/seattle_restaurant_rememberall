@@ -1,7 +1,8 @@
 <h2>Cuisines saved by all users: </h2><br>
 <% Restaurant.all.each do |restaurant| %>
     <%cuisine = restaurant.cuisine.name%>
-    <h4><%=cuisine.capitalize%></h4>
+
+    <a href="/by_cuisine/<%=cuisine%>"><h4><%=cuisine.capitalize%></h4></a>
 <% end %>
 <br>
   <form method="post" action="/by_cuisine">
