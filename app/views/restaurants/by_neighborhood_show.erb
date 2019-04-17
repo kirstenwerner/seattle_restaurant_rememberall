@@ -1,0 +1,17 @@
+<h2>Here's all of the restuarants <%=@neighborhood.name%> that users have saved!</h2>
+
+<% neighborhood = Neighborhood.find_by(name: params[:neighborhood])%>
+
+<% if Restaurant.where(neighborhood_id: neighborhood.id).empty? %>
+  <h4><red>There are not currently any restaurants saved in this neighborhood</red></h4>
+<% else %>
+  <% Restaurant.all.each do |restaurant| %>
+    <% if restaurant.neighborhood_id == @neighborhood.id %>
+      <h4><%=restaurant.name%>, serving <%=restaurant.cuisine.name%> cuisine</h4>
+    <% end %>
+  <% end %> 
+<% end %>
+<br>
+<form action="/restaurants" method="get">
+  <input type="submit" value="Main Menu" id="menu">
+</form>
