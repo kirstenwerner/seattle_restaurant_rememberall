@@ -1,0 +1,15 @@
+<h2>Here's all of the restuarants serving <%=@cuisine.name%> that users have saved!</h2>
+<% cuisine = Cuisine.find_by(name: params[:cuisine])%>
+<% if Restaurant.where(cuisine_id: cuisine.id).empty? %>
+  <h4><red>There are not currently any restaurants saved that are serving this type of food</red></h4>
+<% else %>
+  <% Restaurant.all.each do |restaurant| %>
+    <% if restaurant.cuisine_id == @cuisine.id %>
+      <h4><%=restaurant.name%>, in <%=restaurant.neighborhood.name%></h4>
+    <% end %>
+  <% end %>
+<% end %>
+<br>
+<form action="/restaurants" method="get">
+  <input type="submit" value="Main Menu" id="menu">
+</form>
