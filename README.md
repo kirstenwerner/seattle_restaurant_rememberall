@@ -2,7 +2,7 @@
 Made as the portfolio project for the Sinatra section of the Flatiron School online program. The app allows users to create an account to keep track of restaurants that they want to remember. Users can save restaurants that they want to remember to try, search, edit, and delete their own lists, view all restaurants entered by all other users, and search the entire database of entered restaurants by cuisine or neighborhood.
 
 ##Installing
-
+Fork and download from https://github.com/kirstenwerner/seattle_restaurant_rememberall
 
 ##Contributing
 
