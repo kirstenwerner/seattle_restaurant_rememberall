@@ -20,8 +20,8 @@ class ApplicationController < Sinatra::Base
       erb :'/users/create_user'
     end
   end
-  post '/signup' do
 
+  post '/signup' do
     @username = params[:username]
     @password = params[:password]
     @email = params[:email]
