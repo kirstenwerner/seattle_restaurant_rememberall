@@ -15,20 +15,38 @@
   </head>
   <body>
     <main style="background-image:url(/images/seattle-skyline.jpeg)">
-      <nav>
-        <div class="nav-wrapper teal">
-          <a href="/" class="brand-logo center">Seattle Restaurant Rememberall</a>
-          <ul class="left hide-on-med-and-down">
-            <a href="/login">Log In</a>
+  <nav class="grey darken-1">
+    <div class="container white">
+      <form action="/" method="get">
+         <input type="submit" value="Home" id="home">
+      </form>
+        <% if logged_in?%>
+          <form action="/logout" method="post">
+             <input type="submit" value="Log Out" id="logout">
+          </form>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+      <!-- <nav>
+        <div class="topnav">
+          <ul class="left">
+            <a href="/">Home</a>
+            <form action="/login" method="post">
+              <input type="submit" value="Log In" id='submit'>
+            </form>
             <a href="/signup">Sign Up</a>
-
+            <form action="/logout" method="post">
+               <input type="submit" value="Log Out" id="logout">
+            </form>
           </ul>
         </div>
-      </nav>
+      </nav> -->
 
     <div class="wrapper">
 
-        <%= yield %>
+        <%= yield %><br>
+
 
       <footer class="branding">
         <small>&copy; 2019 <strong>SeattleRestaurantRememberall</strong></small>
