@@ -3,8 +3,12 @@
 <form action="/restaurants/<%=@restaurant.id%>" method="post">
    <input type="hidden" id="hidden" value="patch" name="_method">
    <p>Name: <input type="text" id="name" value="<%=@restaurant.name%>" name="restaurant[name]"></p>
-   <p>Cuisine: <input type="text" id="cuisine" value="<%=@restaurant.cuisine%>" name="restaurant[cuisine]"></p>
-   <p>Neighborhood: <input type="text" id="neighborhood" value="<%=@restaurant.neighborhood%>" name="restaurant[neighborhood]"></p>
+   <p>Cuisine: <input type="text" id="cuisine" value="<%=@restaurant.cuisine.name%>" name="restaurant[cuisine]"></p>
+   <p>Neighborhood: <input type="text" id="neighborhood" value="<%=@restaurant.neighborhood.name%>" name="restaurant[neighborhood]"></p>
    <br>
    <input type="submit" id="submit">
+</form>
+<br>
+<form action="/restaurants" method="get">
+  <input type="submit" value="Main Menu" id="menu">
 </form>
