@@ -1,0 +1,20 @@
+<h2>Neighborhoods saved by all users: </h2><br>
+
+<% @neighborhoods = [] %>
+<% Restaurant.all.each do |restaurant| %>
+    <%neighborhood = restaurant.neighborhood.name%>
+    <% @neighborhoods << neighborhood %>
+<% end %>
+<% @neighborhoods.uniq.each do |neighborhood| %>
+  <h4><%=neighborhood.capitalize%></h4>
+<% end %>
+
+<br>
+  <form method="post" action="/by_neighborhood">
+    <p>Enter your selection here: <input type="text" name="neighborhood_selection" id="neighborhood_selection"><input type="submit" name="submit" id="submit"></p>
+  </form>
+
+<br>
+<form action="/restaurants" method="get">
+  <input type="submit" value="Main Menu" id="menu">
+</form>
