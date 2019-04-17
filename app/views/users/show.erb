@@ -1,7 +1,18 @@
-<h1>Hi <%= @user.username %>, here's your list of restaurants!</h1>
+<h2>Hi <%= @user.username%>, here's your list of restaurants that you want to try!</h2>
 
 <% @user.restaurants.each do |restaurant| %>
-   <li><%= restaurant.name %></li><br>
+  <% unless restaurant.name == nil || restaurant.cuisine == nil || restaurant.neighborhood == nil %>
+   <li><%= restaurant.name %>: serving <%=restaurant.cuisine.name%> food in <%=restaurant.neighborhood.name%>
+     <form action="/restaurants/<%=restaurant.id%>" method="post">
+       <input type="hidden" id="hidden" value="delete" name="_method">
+       <input type="submit" value="Delete" id="delete">
+     </form>
+     <form action="/restaurants/<%=restaurant.id%>/edit" method="post">
+       <input type="submit" value="Edit" id="edit">
+     </form>
+
+   </li><br>
+   <% end %>
 <% end %>
 
 <br>
@@ -9,6 +20,6 @@
 <input type="submit" value="New Restaurant" id="submit">
 </form>
 <br>
-<form action="/logout" method="post">
-   <input type="submit" value="Log Out" id="logout">
+<form action="/restaurants" method="get">
+  <input type="submit" value="Main Menu" id="menu">
 </form>
