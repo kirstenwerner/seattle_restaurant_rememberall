@@ -1,0 +1,10 @@
+<h2>Here's some restaurant suggestions, from all of our users...</h2><br>
+
+<% Restaurant.all.each do |restaurant| %>
+   <ol><%=restaurant.name %>, <%=restaurant.cuisine.name%> food - located in <%=restaurant.neighborhood.name%></ol><br>
+<% end %>
+
+
+<form action="/restaurants" method="get">
+  <input type="submit" value="Main Menu" id="menu">
+</form>
