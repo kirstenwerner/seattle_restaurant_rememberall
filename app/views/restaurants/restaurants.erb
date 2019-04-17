@@ -1,14 +1,13 @@
-<h1>Hey, <%= @user.username %>!</h1>
-<h3>Here's some restaurant suggestions, from all our users</h3><br>
+<h1>Hey, <%= @user.username %>! Can't remember where you want to eat?</h1>
 
-<% Restaurant.all.each do |restaurant| %>
-   <ol><%=restaurant.name %>, <%=restaurant.cuisine%> food - located in <%=restaurant.neighborhood%></ol><br>
-<% end %>
+<h2>You can search for a restaurant a few different ways....</h2>
 
-<form action="/restaurants/new" method="post" >
-   <input type="submit" value="New Restaurant" id="submit">
-</form>
+<h4><a href="/all">View all restaurants users have saved</a><br>
 
+<h4><a href="/by_cuisine">Search all users' restaurants by cuisine</a><br>
+<h4><a href="/by_neighborhood">Search all users' restaurants by neighborhood</a><br>
+  <br>
+<h4><a href="/users/:slug">View all restaurants you have already saved!</a><br>
 <br>
 <form action="/logout" method="post">
    <input type="submit" value="Log Out" id="logout">
