@@ -1,0 +1,14 @@
+<h2>Cuisines saved by all users: </h2><br>
+<% Restaurant.all.each do |restaurant| %>
+    <%cuisine = restaurant.cuisine.name%>
+    <h4><%=cuisine.capitalize%></h4>
+<% end %>
+<br>
+  <form method="post" action="/by_cuisine">
+    <p>Enter your selection here: <input type="text" name="cuisine_selection" id="cuisine_selection"><input type="submit" name="submit" id="submit"></p>
+  </form>
+
+<br>
+<form action="/restaurants" method="get">
+  <input type="submit" value="Main Menu" id="menu">
+</form>
