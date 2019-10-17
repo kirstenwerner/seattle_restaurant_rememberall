@@ -3,7 +3,7 @@ Made as the portfolio project for the Sinatra section of the Flatiron School onl
 
 ## Installing
 Fork and clone from https://github.com/kirstenwerner/seattle_restaurant_rememberall
-Run shotgun 
+Run shotgun
 
 ## Contributing
 
@@ -22,4 +22,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the WashingtonSkiReport project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'awesome-entropy-8020'/washington_ski_report/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the SeattleRestaurantRememberall project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'awesome-entropy-8020'/seattle-restaurant-rememberall/blob/master/CODE_OF_CONDUCT.md).
